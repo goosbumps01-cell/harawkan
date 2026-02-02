@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>💖 Valentine</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    text-align: center;
+    padding-top: 40px;
+    overflow: hidden;
+  }
+
+  video, img {
+    width: 220px;
+    border-radius: 12px;
+  }
+
+  h2 {
+    color: #444;
+    margin-top: 15px;
+  }
+
+  .buttons {
+    margin-top: 25px;
+  }
+
+  button {
+    font-size: 22px;
+    padding: 12px 28px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+
+  #yes {
+    background: #ff4d6d;
+    color: white;
+    font-size: 26px;
+  }
+
+  #no {
+    position: absolute;
+    background: #eee;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- 🔁 CHANGE video to img if you use GIFs -->
+<img id="media" src="sad.gif" alt="vv gif">
+
+
+<h2 id="text">Will you be my jmm? 💌</h2>
+
+<div class="buttons">
+  <button id="yes">Yes 💖</button>
+  <button id="no">No</button>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+  const yesBtn = document.getElementById("yes");
+  const text = document.getElementById("text");
+  const media = document.getElementById("media");
+
+  const messages = [
+    
+    "wx m2kdaaa?",
+    "3awdy fkryyy 😏",
+    "gha harawkan ",
+    "a ryyyyy7yy 💔",
+    "akhir forsaa!",
+    "vvvv zhr ",
+    "kliki yes lymaak"
+  ];
+
+  let i = 0;
+
+  function moveNo() {
+    const x = Math.random() * (window.innerWidth - 140);
+    const y = Math.random() * (window.innerHeight - 80);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    noBtn.innerText = messages[i % messages.length];
+    i++;
+  }
+
+  // Hover (desktop)
+  noBtn.addEventListener("mouseover", moveNo);
+
+  // Click attempt (mobile + desktop)
+  noBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    moveNo();
+  });
+
+  // YES clicked 💖
+  yesBtn.addEventListener("click", () => {
+    text.innerText = "vraaaaaboooooo miss lhjrrrrrr  👏🏿 👏🏿 👏🏿[ms3od fr7an 7ta howa 🤳] ";
+    noBtn.style.display = "none";
+    yesBtn.style.display = "none";
+
+    // change video / gif
+    media.src = "ms3od.gif";
+    
+  });
+</script>
+
+</body>
+</html>
